@@ -2,6 +2,17 @@
 
 CRM for IT services — LTV and RFM analytics.
 
+## Functionalities
+
+### Companies
+![crm_companies.png](marketing/crm_companies.png)
+
+### Company BCG, LTV
+![crm_company_bcg.png](marketing/crm_company_bcg.png)
+
+### RFM Analysis
+![crm_rfm_matrix.png](marketing/crm_rfm_matrix.png)
+
 ## Prerequisites
 
 - Java 21
