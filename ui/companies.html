@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Companies — CRM Small</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-brand"><div class="brand-icon">C</div><span class="brand-name">CRM Small</span></div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard</a>
+      <a href="companies.html" class="nav-item active"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M9 21V5l7-2v18"/><rect x="14" y="11" width="3" height="4"/></svg>Companies</a>
+      <div class="nav-section-label">Analytics</div>
+      <a href="analytics-rfm.html" class="nav-item nav-sub"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 4-6"/></svg>RFM Matrix</a>
+      <a href="analytics-ltv.html" class="nav-item nav-sub"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>LTV Ranking</a>
+      <a href="analytics-bcg.html" class="nav-item nav-sub"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="9" height="9"/><rect x="13" y="2" width="9" height="9"/><rect x="2" y="13" width="9" height="9"/><rect x="13" y="13" width="9" height="9"/></svg>BCG Matrix</a>
+      <a href="contracts.html" class="nav-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>Contracts</a>
+      <a href="invoices.html" class="nav-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Invoices</a>
+    </nav>
+    <div class="sidebar-footer"><div class="user-card"><div class="user-avatar">SC</div><div class="user-info"><div class="user-name">Sarah Chen</div><div class="user-role">Account Manager</div></div></div></div>
+  </aside>
+
+  <div class="main">
+    <header class="header">
+      <span class="header-title">Companies</span>
+      <div class="search-bar"><svg width="14" height="14" fill="none" stroke="#94A3B8" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="text" placeholder="Search companies…"></div>
+      <div class="header-actions"><button class="icon-btn"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="badge-dot"></span></button></div>
+    </header>
+
+    <div class="content">
+      <div class="page-controls">
+        <h1>Companies</h1>
+        <div class="controls-right">
+          <div class="search-input-wrap">
+            <svg width="14" height="14" fill="none" stroke="#94A3B8" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input type="text" placeholder="Search by name or industry…">
+          </div>
+          <select style="padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;font-family:inherit;background:white;color:var(--text)">
+            <option>Sort by: Name</option><option>Sort by: LTV</option><option>Sort by: Last Contact</option><option>Sort by: RFM Score</option>
+          </select>
+          <button class="btn btn-primary">
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Company
+          </button>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-pill active">All (87)</button>
+        <button class="filter-pill">Champions</button>
+        <button class="filter-pill">Loyal</button>
+        <button class="filter-pill">At Risk</button>
+        <button class="filter-pill">Lost</button>
+        <span style="width:1px;height:20px;background:var(--border);margin:0 4px"></span>
+        <button class="filter-pill">⭐ Stars</button>
+        <button class="filter-pill">🐄 Cash Cows</button>
+        <button class="filter-pill">❓ Question Marks</button>
+        <button class="filter-pill">🐕 Dogs</button>
+        <span style="width:1px;height:20px;background:var(--border);margin:0 4px"></span>
+        <select style="padding:5px 10px;border:1px solid var(--border);border-radius:20px;font-size:12px;font-family:inherit;background:white;color:var(--text-secondary)">
+          <option>Status: All</option><option>Active</option><option>Churned</option><option>Prospect</option>
+        </select>
+      </div>
+
+      <div class="card" style="padding:0">
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th style="width:40px"><input type="checkbox"></th>
+                <th>Company</th>
+                <th>Status</th>
+                <th>RFM Segment</th>
+                <th>BCG Quadrant</th>
+                <th class="text-right">LTV</th>
+                <th>Last Contact</th>
+                <th style="width:80px">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><div class="company-cell"><div class="initials ic-6" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">PI</div><div><div class="company-name"><a href="company-detail.html">Pinnacle IT</a></div><div class="company-industry">IT Services</div></div></div></td>
+                <td><span class="badge badge-active">Active</span></td>
+                <td><span class="badge badge-champion">Champion</span></td>
+                <td><span class="badge badge-star">⭐ Stars</span></td>
+                <td class="text-right font-bold">$312,900</td>
+                <td><span style="color:var(--text-secondary);font-size:13px">Yesterday</span></td>
+                <td><button class="btn btn-outline btn-xs">•••</button></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><div class="company-cell"><div class="initials ic-0" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">AC</div><div><div class="company-name"><a href="company-detail.html">Acme Corp</a></div><div class="company-industry">Technology</div></div></div></td>
+                <td><span class="badge badge-active">Active</span></td>
+                <td><span class="badge badge-champion">Champion</span></td>
+                <td><span class="badge badge-star">⭐ Stars</span></td>
+                <td class="text-right font-bold">$284,500</td>
+                <td><span style="color:var(--text-secondary);font-size:13px">2 days ago</span></td>
+                <td><button class="btn btn-outline btn-xs">•••</button></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><div class="company-cell"><div class="initials ic-5" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">CA</div><div><div class="company-name"><a href="company-detail.html">Clarity Analytics</a></div><div class="company-industry">SaaS</div></div></div></td>
+                <td><span class="badge badge-active">Active</span></td>
+                <td><span class="badge badge-loyal">Loyal</span></td>
+                <td><span class="badge badge-star">⭐ Stars</span></td>
+                <td class="text-right font-bold">$221,800</td>
+                <td><span style="color:var(--text-secondary);font-size:13px">3 days ago</span></td>
+                <td><button class="btn btn-outline btn-xs">•••</button></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><div class="company-cell"><div class="initials ic-1" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">GT</div><div><div class="company-name"><a href="company-detail.html">GlobalTech Ltd</a></div><div class="company-industry">IT Services</div></div></div></td>
+                <td><span class="badge badge-active">Active</span></td>
+                <td><span class="badge badge-loyal">Loyal</span></td>
+                <td><span class="badge badge-cash-cow">🐄 Cash Cow</span></td>
+                <td class="text-right font-bold">$198,200</td>
+                <td><span style="color:var(--text-secondary);font-size:13px">1 week ago</span></td>
+                <td><button class="btn btn-outline btn-xs">•••</button></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><div class="company-cell"><div class="initials ic-7" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">OD</div><div><div class="company-name"><a href="company-detail.html">Orion Dynamics</a></div><div class="company-industry">Technology</div></div></div></td>
+                <td><span class="badge badge-active">Active</span></td>
+                <td><span class="badge badge-potential">Potential Loyalist</span></td>
+                <td><span class="badge badge-cash-cow">🐄 Cash Cow</span></td>
+                <td class="text-right font-bold">$134,600</td>
+                <td><span style="color:var(--text-secondary);font-size:13px">4 days ago</span></td>
+                <td><button class="btn btn-outline btn-xs">•••</button></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><div class="company-cell"><div class="initials ic-3" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">VS</div><div><div class="company-name"><a href="company-detail.html">Vertex Systems</a></div><div class="company-industry">Consulting</div></div></div></td>
+                <td><span class="badge badge-active">Active</span></td>
+                <td><span class="badge badge-at-risk">At Risk</span></td>
+                <td><span class="badge badge-dog">🐕 Dog</span></td>
+                <td class="text-right font-bold" style="color:var(--danger)">$76,800</td>
+                <td><span style="color:var(--danger);font-size:13px">3 weeks ago</span></td>
+                <td><button class="btn btn-outline btn-xs">•••</button></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><div class="company-cell"><div class="initials ic-2" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">DS</div><div><div class="company-name"><a href="company-detail.html">DataStream Inc</a></div><div class="company-industry">SaaS</div></div></div></td>
+                <td><span class="badge badge-prospect">Prospect</span></td>
+                <td><span class="badge badge-new">New Customer</span></td>
+                <td><span class="badge badge-question">❓ Question Mark</span></td>
+                <td class="text-right font-bold">$12,400</td>
+                <td><span style="color:var(--success);font-size:13px;font-weight:500">Today</span></td>
+                <td><button class="btn btn-outline btn-xs">•••</button></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><div class="company-cell"><div class="initials ic-4" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">NS</div><div><div class="company-name">NovaSoft</div><div class="company-industry">Software</div></div></div></td>
+                <td><span class="badge badge-churned">Churned</span></td>
+                <td><span class="badge badge-lost">Lost</span></td>
+                <td><span class="badge badge-dog">🐕 Dog</span></td>
+                <td class="text-right font-bold" style="opacity:.6">$43,100</td>
+                <td><span style="color:var(--text-muted);font-size:13px">2 months ago</span></td>
+                <td><button class="btn btn-outline btn-xs">•••</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="padding:16px 20px;border-top:1px solid var(--border)">
+          <div class="pagination">
+            <span class="page-info">Showing 1–8 of 87 companies</span>
+            <button class="page-btn">‹</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <span style="font-size:13px;color:var(--text-muted)">…</span>
+            <button class="page-btn">9</button>
+            <button class="page-btn">›</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.querySelectorAll('.filter-pill').forEach(p => {
+    p.addEventListener('click', () => {
+      document.querySelectorAll('.filter-pill').forEach(x => x.classList.remove('active'));
+      p.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — CRM Small</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="brand-icon">C</div>
+      <span class="brand-name">CRM Small</span>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item active">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        Dashboard
+      </a>
+      <a href="companies.html" class="nav-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M9 21V5l7-2v18"/><rect x="14" y="11" width="3" height="4"/></svg>
+        Companies
+      </a>
+      <div class="nav-section-label">Analytics</div>
+      <a href="analytics-rfm.html" class="nav-item nav-sub">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 4-6"/></svg>
+        RFM Matrix
+      </a>
+      <a href="analytics-ltv.html" class="nav-item nav-sub">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>
+        LTV Ranking
+      </a>
+      <a href="analytics-bcg.html" class="nav-item nav-sub">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="9" height="9"/><rect x="13" y="2" width="9" height="9"/><rect x="2" y="13" width="9" height="9"/><rect x="13" y="13" width="9" height="9"/></svg>
+        BCG Matrix
+      </a>
+      <a href="contracts.html" class="nav-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        Contracts
+      </a>
+      <a href="invoices.html" class="nav-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        Invoices
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-card">
+        <div class="user-avatar">SC</div>
+        <div class="user-info">
+          <div class="user-name">Sarah Chen</div>
+          <div class="user-role">Account Manager</div>
+        </div>
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+    <header class="header">
+      <span class="header-title">Dashboard</span>
+      <div class="search-bar">
+        <svg width="14" height="14" fill="none" stroke="#94A3B8" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" placeholder="Search companies, invoices…">
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="badge-dot"></span>
+        </button>
+        <div class="user-card" style="padding:4px 8px">
+          <div class="user-avatar" style="width:30px;height:30px;font-size:11px">SC</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+
+      <!-- KPI Cards -->
+      <div class="grid grid-4 mb-16">
+        <div class="kpi-card" style="--accent:#6366F1">
+          <div class="kpi-header">
+            <div class="kpi-icon" style="--icon-bg:#EEF2FF;--icon-color:#6366F1">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v12M9 9h4.5a1.5 1.5 0 0 1 0 3H10a1.5 1.5 0 0 0 0 3H15"/></svg>
+            </div>
+          </div>
+          <div class="kpi-label">Total Portfolio LTV</div>
+          <div class="kpi-value">$4.28M</div>
+          <div class="kpi-trend up">↑ 12.4% vs last quarter</div>
+        </div>
+        <div class="kpi-card" style="--accent:#10B981">
+          <div class="kpi-header">
+            <div class="kpi-icon" style="--icon-bg:#DCFCE7;--icon-color:#10B981">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+            </div>
+          </div>
+          <div class="kpi-label">Active Contracts</div>
+          <div class="kpi-value">142</div>
+          <div class="kpi-trend up">↑ +3 this month</div>
+        </div>
+        <div class="kpi-card" style="--accent:#F59E0B">
+          <div class="kpi-header">
+            <div class="kpi-icon" style="--icon-bg:#FEF3C7;--icon-color:#F59E0B">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+          </div>
+          <div class="kpi-label">Outstanding Invoices</div>
+          <div class="kpi-value">$318K</div>
+          <div class="kpi-trend neutral">23 unpaid invoices</div>
+        </div>
+        <div class="kpi-card" style="--accent:#EF4444">
+          <div class="kpi-header">
+            <div class="kpi-icon" style="--icon-bg:#FEE2E2;--icon-color:#EF4444">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            </div>
+          </div>
+          <div class="kpi-label">At-Risk Companies</div>
+          <div class="kpi-value">17</div>
+          <div class="kpi-trend down">↓ needs attention</div>
+        </div>
+      </div>
+
+      <!-- Row 2: Segments + BCG Overview -->
+      <div class="grid grid-60-40 mb-16">
+
+        <!-- RFM Segments -->
+        <div class="card">
+          <div class="card-title">Customer Segments <span class="text-muted" style="font-weight:400">— 107 companies</span></div>
+          <div class="donut-wrap">
+            <div style="position:relative">
+              <div class="donut"></div>
+              <div class="donut-center">
+                <div class="num">107</div>
+                <div class="lbl">customers</div>
+              </div>
+            </div>
+            <div style="flex:1">
+              <div class="legend-item">
+                <div class="legend-dot" style="background:#6366F1"></div>
+                <span class="legend-name">Champions</span>
+                <span class="legend-count">24</span>
+                <span class="legend-pct">22%</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot" style="background:#8B5CF6"></div>
+                <span class="legend-name">Loyal</span>
+                <span class="legend-count">31</span>
+                <span class="legend-pct">29%</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot" style="background:#10B981"></div>
+                <span class="legend-name">Potential Loyalist</span>
+                <span class="legend-count">18</span>
+                <span class="legend-pct">17%</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot" style="background:#F59E0B"></div>
+                <span class="legend-name">At Risk</span>
+                <span class="legend-count">17</span>
+                <span class="legend-pct">16%</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot" style="background:#EF4444"></div>
+                <span class="legend-name">Lost</span>
+                <span class="legend-count">8</span>
+                <span class="legend-pct">7%</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-dot" style="background:#06B6D4"></div>
+                <span class="legend-name">New Customers</span>
+                <span class="legend-count">9</span>
+                <span class="legend-pct">8%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BCG Overview -->
+        <div class="card">
+          <div class="card-title">BCG Portfolio Overview</div>
+          <div class="grid grid-50" style="gap:8px">
+            <div style="background:#FFFBEB;border-radius:10px;padding:14px;text-align:center">
+              <div style="font-size:20px">⭐</div>
+              <div style="font-size:13px;font-weight:700;color:#92400E">Stars</div>
+              <div style="font-size:22px;font-weight:700;color:#D97706">8</div>
+              <div style="font-size:11px;color:#92400E">$1.2M revenue</div>
+            </div>
+            <div style="background:#DBEAFE;border-radius:10px;padding:14px;text-align:center">
+              <div style="font-size:20px">❓</div>
+              <div style="font-size:13px;font-weight:700;color:#1E3A8A">Question Marks</div>
+              <div style="font-size:22px;font-weight:700;color:#3B82F6">12</div>
+              <div style="font-size:11px;color:#1E3A8A">$340K revenue</div>
+            </div>
+            <div style="background:#DCFCE7;border-radius:10px;padding:14px;text-align:center">
+              <div style="font-size:20px">🐄</div>
+              <div style="font-size:13px;font-weight:700;color:#14532D">Cash Cows</div>
+              <div style="font-size:22px;font-weight:700;color:#16A34A">31</div>
+              <div style="font-size:11px;color:#14532D">$2.1M revenue</div>
+            </div>
+            <div style="background:#F1F5F9;border-radius:10px;padding:14px;text-align:center">
+              <div style="font-size:20px">🐕</div>
+              <div style="font-size:13px;font-weight:700;color:#475569">Dogs</div>
+              <div style="font-size:22px;font-weight:700;color:#64748B">19</div>
+              <div style="font-size:11px;color:#475569">$180K revenue</div>
+            </div>
+          </div>
+          <div style="text-align:right;margin-top:12px">
+            <a href="analytics-bcg.html" style="font-size:12px;color:#6366F1;font-weight:500">View Full Matrix →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Top Customers + Activity -->
+      <div class="grid grid-50">
+
+        <!-- Top Customers -->
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+            <div class="card-title" style="margin:0">Top Customers by LTV</div>
+            <a href="analytics-ltv.html" style="font-size:12px;color:#6366F1;font-weight:500">View All →</a>
+          </div>
+          <div>
+            <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)">
+              <span class="rank-num rank-1">1</span>
+              <div class="initials ic-6" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">PI</div>
+              <div style="flex:1">
+                <div style="font-weight:600;font-size:13px"><a href="company-detail.html">Pinnacle IT</a></div>
+                <div style="display:flex;gap:6px;align-items:center;margin-top:2px">
+                  <span class="badge badge-champion" style="font-size:10px;padding:1px 7px">Champion</span>
+                  <span style="font-size:11px;color:var(--text-muted)">IT Services</span>
+                </div>
+                <div class="progress-bar mt-4"><div class="progress-fill pf-primary" style="width:100%"></div></div>
+              </div>
+              <div style="font-size:15px;font-weight:700">$312.9K</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)">
+              <span class="rank-num rank-2">2</span>
+              <div class="initials ic-0" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">AC</div>
+              <div style="flex:1">
+                <div style="font-weight:600;font-size:13px"><a href="company-detail.html">Acme Corp</a></div>
+                <div style="display:flex;gap:6px;align-items:center;margin-top:2px">
+                  <span class="badge badge-champion" style="font-size:10px;padding:1px 7px">Champion</span>
+                  <span style="font-size:11px;color:var(--text-muted)">Technology</span>
+                </div>
+                <div class="progress-bar mt-4"><div class="progress-fill pf-primary" style="width:91%"></div></div>
+              </div>
+              <div style="font-size:15px;font-weight:700">$284.5K</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)">
+              <span class="rank-num rank-3">3</span>
+              <div class="initials ic-5" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">CA</div>
+              <div style="flex:1">
+                <div style="font-weight:600;font-size:13px"><a href="company-detail.html">Clarity Analytics</a></div>
+                <div style="display:flex;gap:6px;align-items:center;margin-top:2px">
+                  <span class="badge badge-loyal" style="font-size:10px;padding:1px 7px">Loyal</span>
+                  <span style="font-size:11px;color:var(--text-muted)">SaaS</span>
+                </div>
+                <div class="progress-bar mt-4"><div class="progress-fill pf-primary" style="width:71%"></div></div>
+              </div>
+              <div style="font-size:15px;font-weight:700">$221.8K</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--border)">
+              <span class="rank-num">4</span>
+              <div class="initials ic-1" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">GT</div>
+              <div style="flex:1">
+                <div style="font-weight:600;font-size:13px"><a href="company-detail.html">GlobalTech Ltd</a></div>
+                <div style="display:flex;gap:6px;align-items:center;margin-top:2px">
+                  <span class="badge badge-loyal" style="font-size:10px;padding:1px 7px">Loyal</span>
+                  <span style="font-size:11px;color:var(--text-muted)">IT Services</span>
+                </div>
+                <div class="progress-bar mt-4"><div class="progress-fill pf-primary" style="width:63%"></div></div>
+              </div>
+              <div style="font-size:15px;font-weight:700">$198.2K</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;padding:10px 0">
+              <span class="rank-num">5</span>
+              <div class="initials ic-7" style="width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:white;flex-shrink:0">OD</div>
+              <div style="flex:1">
+                <div style="font-weight:600;font-size:13px"><a href="company-detail.html">Orion Dynamics</a></div>
+                <div style="display:flex;gap:6px;align-items:center;margin-top:2px">
+                  <span class="badge badge-potential" style="font-size:10px;padding:1px 7px">Potential Loyalist</span>
+                  <span style="font-size:11px;color:var(--text-muted)">Technology</span>
+                </div>
+                <div class="progress-bar mt-4"><div class="progress-fill pf-primary" style="width:43%"></div></div>
+              </div>
+              <div style="font-size:15px;font-weight:700">$134.6K</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Activity Feed -->
+        <div class="card">
+          <div class="card-title">Recent Activity</div>
+          <div class="activity-item">
+            <div class="activity-icon" style="background:#DCFCE7">
+              <svg width="14" height="14" fill="none" stroke="#10B981" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/></svg>
+            </div>
+            <div>
+              <div class="activity-text"><a href="company-detail.html">Pinnacle IT</a> — Invoice INV-4821 marked as paid</div>
+              <div class="activity-time">18 minutes ago</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon" style="background:#EEF2FF">
+              <svg width="14" height="14" fill="none" stroke="#6366F1" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16h16V8z"/></svg>
+            </div>
+            <div>
+              <div class="activity-text"><a href="company-detail.html">Acme Corp</a> — New contract CT-2041 created ($4,500/mo)</div>
+              <div class="activity-time">2 hours ago</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon" style="background:#CFFAFE">
+              <svg width="14" height="14" fill="none" stroke="#06B6D4" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="activity-text"><a href="company-detail.html">GlobalTech Ltd</a> — Renewal call logged by Sarah Chen</div>
+              <div class="activity-time">Yesterday, 3:45 PM</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon" style="background:#FEE2E2">
+              <svg width="14" height="14" fill="none" stroke="#EF4444" stroke-width="2" viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+            </div>
+            <div>
+              <div class="activity-text"><a href="company-detail.html">Vertex Systems</a> — Status changed to <strong>At Risk</strong></div>
+              <div class="activity-time">Yesterday, 2:00 AM</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon" style="background:#DCFCE7">
+              <svg width="14" height="14" fill="none" stroke="#10B981" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+            </div>
+            <div>
+              <div class="activity-text"><a href="company-detail.html">Clarity Analytics</a> — Invoice INV-4819 sent ($28,400)</div>
+              <div class="activity-time">2 days ago</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon" style="background:#EEF2FF">
+              <svg width="14" height="14" fill="none" stroke="#6366F1" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <div class="activity-text"><a href="company-detail.html">DataStream Inc</a> — New company added as Prospect</div>
+              <div class="activity-time">3 days ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

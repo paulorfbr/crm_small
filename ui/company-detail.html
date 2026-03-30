@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acme Corp — CRM Small</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-brand"><div class="brand-icon">C</div><span class="brand-name">CRM Small</span></div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard</a>
+      <a href="companies.html" class="nav-item active"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M9 21V5l7-2v18"/><rect x="14" y="11" width="3" height="4"/></svg>Companies</a>
+      <div class="nav-section-label">Analytics</div>
+      <a href="analytics-rfm.html" class="nav-item nav-sub"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 4-6"/></svg>RFM Matrix</a>
+      <a href="analytics-ltv.html" class="nav-item nav-sub"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>LTV Ranking</a>
+      <a href="analytics-bcg.html" class="nav-item nav-sub"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="9" height="9"/><rect x="13" y="2" width="9" height="9"/><rect x="2" y="13" width="9" height="9"/><rect x="13" y="13" width="9" height="9"/></svg>BCG Matrix</a>
+      <a href="contracts.html" class="nav-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>Contracts</a>
+      <a href="invoices.html" class="nav-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Invoices</a>
+    </nav>
+    <div class="sidebar-footer"><div class="user-card"><div class="user-avatar">SC</div><div class="user-info"><div class="user-name">Sarah Chen</div><div class="user-role">Account Manager</div></div></div></div>
+  </aside>
+
+  <div class="main">
+    <header class="header">
+      <span class="header-title"><a href="companies.html" style="color:var(--text-muted);font-size:14px;font-weight:400">Companies</a> / Acme Corp</span>
+      <div class="search-bar"><svg width="14" height="14" fill="none" stroke="#94A3B8" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="text" placeholder="Search…"></div>
+      <div class="header-actions"><button class="icon-btn"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg><span class="badge-dot"></span></button></div>
+    </header>
+
+    <div class="content">
+
+      <!-- Company Header -->
+      <div class="company-header-card">
+        <div class="company-header-left">
+          <div class="company-avatar-lg ic-0">AC</div>
+          <div class="company-header-info">
+            <div style="display:flex;align-items:center;gap:10px">
+              <h1>Acme Corp</h1>
+              <span class="badge badge-active">Active</span>
+              <span class="badge badge-champion">Champion</span>
+              <span class="badge badge-star">⭐ Star</span>
+            </div>
+            <div style="font-size:13px;color:var(--text-secondary);margin-top:4px">Technology &nbsp;·&nbsp; Enterprise &nbsp;·&nbsp; North America</div>
+            <div class="company-meta-chips">
+              <span class="chip">📅 Member since Jan 2019</span>
+              <span class="chip">💬 Last contact: 2 days ago</span>
+              <span class="chip">📄 5 active contracts</span>
+              <span class="chip">👤 Manager: Sarah Chen</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:flex-start;flex-shrink:0">
+          <button class="btn btn-outline btn-sm">Log Interaction</button>
+          <button class="btn btn-outline btn-sm">New Contract</button>
+          <button class="btn btn-primary btn-sm">Edit Company</button>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs">
+        <button class="tab-btn" onclick="showTab('profile')">Profile</button>
+        <button class="tab-btn active" onclick="showTab('analytics')">Analytics</button>
+        <button class="tab-btn" onclick="showTab('contracts')">Contracts</button>
+        <button class="tab-btn" onclick="showTab('invoices')">Invoices</button>
+        <button class="tab-btn" onclick="showTab('interactions')">Interactions</button>
+      </div>
+
+      <!-- Profile Tab -->
+      <div id="tab-profile" class="tab-panel">
+        <div class="grid grid-50" style="gap:20px">
+          <div class="card">
+            <div class="card-title">Company Information</div>
+            <div class="detail-row"><span class="detail-label">Website</span><span class="detail-value"><a href="#" style="color:var(--primary)">www.acmecorp.com</a></span></div>
+            <div class="detail-row"><span class="detail-label">Phone</span><span class="detail-value">+1 (415) 555-0192</span></div>
+            <div class="detail-row"><span class="detail-label">Email</span><span class="detail-value">contact@acmecorp.com</span></div>
+            <div class="detail-row"><span class="detail-label">Address</span><span class="detail-value">123 Market St, San Francisco, CA 94105</span></div>
+            <div class="detail-row"><span class="detail-label">Industry</span><span class="detail-value">Technology</span></div>
+            <div class="detail-row"><span class="detail-label">Company Size</span><span class="detail-value">250–500 employees</span></div>
+            <div class="detail-row"><span class="detail-label">Founded</span><span class="detail-value">2008</span></div>
+            <div class="detail-row"><span class="detail-label">Tier</span><span class="detail-value"><span class="badge badge-prospect">Enterprise</span></span></div>
+            <div class="detail-row"><span class="detail-label">Acquired</span><span class="detail-value">January 15, 2019</span></div>
+          </div>
+          <div>
+            <div class="card mb-16">
+              <div class="card-title">Primary Contact</div>
+              <div style="display:flex;gap:12px;align-items:center">
+                <div class="user-avatar" style="width:42px;height:42px;font-size:15px;border-radius:10px">JD</div>
+                <div>
+                  <div style="font-weight:600">James Donovan</div>
+                  <div style="font-size:12px;color:var(--text-muted)">CTO</div>
+                  <div style="font-size:12px;color:var(--primary);margin-top:2px">j.donovan@acmecorp.com</div>
+                  <div style="font-size:12px;color:var(--text-secondary)">+1 (415) 555-0194</div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-title">Tags</div>
+              <div>
+                <span class="tag">MSP Client</span>
+                <span class="tag">Enterprise</span>
+                <span class="tag">Multi-Site</span>
+                <span class="tag">SLA Priority</span>
+                <span class="tag">Annual Review</span>
+              </div>
+              <div class="card-title mt-16">Notes</div>
+              <div style="font-size:13px;color:var(--text-secondary);line-height:1.6">
+                Key account since 2019. Multi-year contract holder. Interested in expanding to cloud services in Q3. Annual review scheduled for April. Preferred contact is James (CTO) for technical decisions, Laura Chen (Procurement) for billing.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analytics Tab (default) -->
+      <div id="tab-analytics" class="tab-panel active">
+        <!-- Mini KPIs -->
+        <div class="grid grid-4 mb-16" style="gap:12px">
+          <div class="kpi-card" style="--accent:#6366F1;padding:16px">
+            <div class="kpi-label">Projected LTV</div>
+            <div class="kpi-value" style="font-size:22px">$284,500</div>
+            <div class="kpi-trend up">↑ +18.4% YoY</div>
+          </div>
+          <div class="kpi-card" style="--accent:#8B5CF6;padding:16px">
+            <div class="kpi-label">RFM Score</div>
+            <div class="kpi-value" style="font-size:22px">543</div>
+            <div class="kpi-trend neutral">R:5 F:4 M:3</div>
+          </div>
+          <div class="kpi-card" style="--accent:#10B981;padding:16px">
+            <div class="kpi-label">Active Contracts</div>
+            <div class="kpi-value" style="font-size:22px">5</div>
+            <div class="kpi-trend neutral">$4,200/mo value</div>
+          </div>
+          <div class="kpi-card" style="--accent:#F59E0B;padding:16px">
+            <div class="kpi-label">Avg Invoice Value</div>
+            <div class="kpi-value" style="font-size:22px">$12,800</div>
+            <div class="kpi-trend neutral">23 total invoices</div>
+          </div>
+        </div>
+
+        <div class="grid grid-50 mb-16">
+          <!-- RFM Breakdown -->
+          <div class="card">
+            <div class="card-title">RFM Analysis</div>
+            <div class="score-row">
+              <div class="score-header">
+                <div>
+                  <span class="score-label">Recency</span>
+                  <span class="score-meta"> — last purchase 12 days ago</span>
+                </div>
+                <span class="score-num" style="color:#6366F1">5 / 5</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill pf-primary" style="width:100%"></div></div>
+            </div>
+            <div class="score-row">
+              <div class="score-header">
+                <div>
+                  <span class="score-label">Frequency</span>
+                  <span class="score-meta"> — 23 transactions total</span>
+                </div>
+                <span class="score-num" style="color:#10B981">4 / 5</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill pf-success" style="width:80%"></div></div>
+            </div>
+            <div class="score-row">
+              <div class="score-header">
+                <div>
+                  <span class="score-label">Monetary</span>
+                  <span class="score-meta"> — $284,500 total spend</span>
+                </div>
+                <span class="score-num" style="color:#8B5CF6">3 / 5</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width:60%;background:#8B5CF6"></div></div>
+            </div>
+            <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between">
+              <span style="font-size:13px;color:var(--text-secondary)">Current Segment</span>
+              <span class="badge badge-champion" style="font-size:13px;padding:5px 14px">Champion</span>
+            </div>
+          </div>
+
+          <!-- BCG Position -->
+          <div class="card">
+            <div class="card-title">BCG Position</div>
+            <div style="position:relative;margin:0 auto;width:220px">
+              <!-- Mini 2x2 BCG -->
+              <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;width:220px;height:180px;border:1px solid var(--border);border-radius:8px;overflow:hidden;position:relative">
+                <div style="background:#DBEAFE;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#1E3A8A;border-right:1px dashed #CBD5E1;border-bottom:1px dashed #CBD5E1;gap:2px">
+                  <span style="font-size:16px">❓</span><span>Question</span>
+                </div>
+                <div style="background:#FFFBEB;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#92400E;border-bottom:1px dashed #CBD5E1;gap:2px;position:relative">
+                  <span style="font-size:16px">⭐</span><span>Stars</span>
+                  <!-- Current company dot -->
+                  <div style="width:14px;height:14px;background:#6366F1;border-radius:50%;position:absolute;top:30px;left:35px;border:2px solid white;box-shadow:0 0 0 2px #6366F1"></div>
+                </div>
+                <div style="background:#F1F5F9;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#475569;border-right:1px dashed #CBD5E1;gap:2px">
+                  <span style="font-size:16px">🐕</span><span>Dogs</span>
+                </div>
+                <div style="background:#DCFCE7;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:#14532D;gap:2px">
+                  <span style="font-size:16px">🐄</span><span>Cash Cow</span>
+                </div>
+              </div>
+              <div style="display:flex;justify-content:space-between;margin-top:4px;font-size:10px;color:var(--text-muted)">
+                <span>← Low Share</span><span>High Share →</span>
+              </div>
+            </div>
+            <div style="margin-top:12px;text-align:center">
+              <div style="font-size:13px;font-weight:700">Current Quadrant: <span style="color:#D97706">⭐ Stars</span></div>
+              <div style="font-size:11px;color:var(--text-muted);margin-top:4px">Growth Rate: 18.4% &nbsp;|&nbsp; Revenue Share: 6.7%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Revenue History Chart (CSS) -->
+        <div class="card">
+          <div class="card-title">Revenue History — Last 12 Months</div>
+          <div style="display:flex;align-items:flex-end;gap:8px;height:120px;padding:8px 0">
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+              <div style="width:100%;background:#6366F1;border-radius:4px 4px 0 0;height:45px"></div>
+              <span style="font-size:10px;color:var(--text-muted)">Apr</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+              <div style="width:100%;background:#6366F1;border-radius:4px 4px 0 0;height:52px"></div>
+              <span style="font-size:10px;color:var(--text-muted)">May</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+              <div style="width:100%;background:#6366F1;border-radius:4px 4px 0 0;height:38px"></div>
+              <span style="font-size:10px;color:var(--text-muted)">Jun</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+              <div style="width:100%;background:#6366F1;border-radius:4px 4px 0 0;height:61px"></div>
+              <span style="font-size:10px;color:var(--text-muted)">Jul</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+              <div style="width:100%;background:#6366F1;border-radius:4px 4px 0 0;height:55px"></div>
+              <span style="font-size:10px;color:var(--text-muted)">Aug</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+              <div style="width:100%;background:#6366F1;border-radius:4px 4px 0 0;height:72px"></div>
+              <span style="font-size:10px;color:var(--text-muted)">Sep</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+              <div style="width:100%;background:#6366F1;border-radius:4px 4px 0 0;height:48px"></div>
+              <span style="font-size:10px;color:var(--text-muted)">Oct</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+              <div style="width:100%;background:#6366F1;border-radius:4px 4px 0 0;height:80px"></div>
+              <span style="font-size:10px;color:var(--text-muted)">Nov</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+              <div style="width:100%;background:#6366F1;border-radius:4px 4px 0 0;height:65px"></div>
+              <span style="font-size:10px;color:var(--text-muted)">Dec</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+              <div style="width:100%;background:#6366F1;border-radius:4px 4px 0 0;height:78px"></div>
+              <span style="font-size:10px;color:var(--text-muted)">Jan</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+              <div style="width:100%;background:#6366F1;border-radius:4px 4px 0 0;height:90px"></div>
+              <span style="font-size:10px;color:var(--text-muted)">Feb</span>
+            </div>
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:4px">
+              <div style="width:100%;background:#818CF8;border-radius:4px 4px 0 0;height:100px;border:2px solid #6366F1"></div>
+              <span style="font-size:10px;color:var(--primary);font-weight:600">Mar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contracts Tab -->
+      <div id="tab-contracts" class="tab-panel">
+        <div class="card" style="padding:0">
+          <div style="padding:16px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+            <span style="font-weight:600">Active Contracts</span>
+            <button class="btn btn-primary btn-sm">+ New Contract</button>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>Contract ID</th><th>Service Type</th><th>Start</th><th>End</th><th class="text-right">Monthly Value</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td class="font-mono">CT-2041</td><td>Managed Services</td><td>Jan 2023</td><td>Jan 2025</td><td class="text-right font-bold">$4,500</td><td><span class="badge badge-active">Active</span></td></tr>
+                <tr><td class="font-mono">CT-1987</td><td>Support Retainer</td><td>Mar 2022</td><td>—</td><td class="text-right font-bold">$1,200</td><td><span class="badge badge-active">Active</span></td></tr>
+                <tr><td class="font-mono">CT-1654</td><td>SaaS License</td><td>Jun 2021</td><td>Jun 2024</td><td class="text-right font-bold">$800</td><td><span class="badge badge-active">Active</span></td></tr>
+                <tr><td class="font-mono">CT-1204</td><td>Consulting Retainer</td><td>Jan 2020</td><td>Jan 2022</td><td class="text-right" style="opacity:.6">$2,000</td><td><span class="badge badge-expired">Expired</span></td></tr>
+                <tr><td class="font-mono">CT-0991</td><td>Managed Services</td><td>Jan 2019</td><td>Jan 2021</td><td class="text-right" style="opacity:.6">$3,200</td><td><span class="badge badge-expired">Expired</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Invoices Tab -->
+      <div id="tab-invoices" class="tab-panel">
+        <div class="card" style="padding:0">
+          <div style="padding:16px 20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center">
+            <span style="font-weight:600">Invoices</span>
+            <button class="btn btn-primary btn-sm">+ New Invoice</button>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead><tr><th>Invoice #</th><th>Issued</th><th>Due</th><th class="text-right">Amount</th><th>Status</th><th>Action</th></tr></thead>
+              <tbody>
+                <tr><td class="font-mono">INV-4821</td><td>Mar 1, 2026</td><td>Mar 31, 2026</td><td class="text-right font-bold">$18,400</td><td><span class="badge badge-paid">Paid</span></td><td><button class="btn btn-outline btn-xs">View</button></td></tr>
+                <tr><td class="font-mono">INV-4712</td><td>Feb 1, 2026</td><td>Mar 1, 2026</td><td class="text-right font-bold">$12,800</td><td><span class="badge badge-paid">Paid</span></td><td><button class="btn btn-outline btn-xs">View</button></td></tr>
+                <tr class="overdue-row"><td class="font-mono">INV-4631</td><td>Jan 15, 2026</td><td>Feb 15, 2026</td><td class="text-right font-bold" style="color:var(--danger)">$9,200</td><td><span class="badge badge-overdue">Overdue</span></td><td><button class="btn btn-success-outline btn-xs">Mark Paid</button></td></tr>
+                <tr><td class="font-mono">INV-4500</td><td>Jan 1, 2026</td><td>Jan 31, 2026</td><td class="text-right font-bold">$14,600</td><td><span class="badge badge-paid">Paid</span></td><td><button class="btn btn-outline btn-xs">View</button></td></tr>
+                <tr><td class="font-mono">INV-4412</td><td>Dec 1, 2025</td><td>Dec 31, 2025</td><td class="text-right font-bold">$11,200</td><td><span class="badge badge-paid">Paid</span></td><td><button class="btn btn-outline btn-xs">View</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactions Tab -->
+      <div id="tab-interactions" class="tab-panel">
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+            <span class="card-title" style="margin:0">Interaction History</span>
+            <button class="btn btn-primary btn-sm">+ Log Interaction</button>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot" style="background:#6366F1"></div>
+              <div class="timeline-date">Mar 25, 2026 — 10:30 AM</div>
+              <div class="timeline-content">
+                <div class="timeline-type">📞 Call</div>
+                <div class="timeline-note">Quarterly review call with James Donovan. Discussed expanding cloud infrastructure services. Client interested in migrating 3 additional servers.</div>
+                <div class="timeline-by">Logged by Sarah Chen · Outcome: Follow-up scheduled</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot" style="background:#10B981"></div>
+              <div class="timeline-date">Mar 10, 2026 — 2:00 PM</div>
+              <div class="timeline-content">
+                <div class="timeline-type" style="color:#10B981">🤝 Meeting</div>
+                <div class="timeline-note">On-site QBR at Acme HQ. Presented SLA performance report (99.8% uptime). Client satisfied with service. Renewal discussion started for CT-1654 expiring Jun 2024.</div>
+                <div class="timeline-by">Logged by Sarah Chen · Outcome: Renewal in progress</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot" style="background:#F59E0B"></div>
+              <div class="timeline-date">Feb 28, 2026 — 9:15 AM</div>
+              <div class="timeline-content">
+                <div class="timeline-type" style="color:#F59E0B">🎫 Support Ticket</div>
+                <div class="timeline-note">High priority ticket: network outage affecting 3 office locations. Resolved within 2 hours. Root cause: misconfigured VPN gateway.</div>
+                <div class="timeline-by">Logged by NOC Team · Outcome: Resolved</div>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot" style="background:#06B6D4"></div>
+              <div class="timeline-date">Feb 14, 2026 — 11:00 AM</div>
+              <div class="timeline-content">
+                <div class="timeline-type" style="color:#06B6D4">📧 Email</div>
+                <div class="timeline-note">Sent monthly service report and new service catalog. Highlighted 30% discount on new security audit package.</div>
+                <div class="timeline-by">Logged by Marketing · Outcome: No response yet</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script>
+  function showTab(name) {
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+</body>
+</html>

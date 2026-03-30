@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RFM Matrix — CRM Small</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-brand"><div class="brand-icon">C</div><span class="brand-name">CRM Small</span></div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html" class="nav-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard</a>
+      <a href="companies.html" class="nav-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 21h18M9 21V5l7-2v18"/><rect x="14" y="11" width="3" height="4"/></svg>Companies</a>
+      <div class="nav-section-label">Analytics</div>
+      <a href="analytics-rfm.html" class="nav-item nav-sub active"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 4-6"/></svg>RFM Matrix</a>
+      <a href="analytics-ltv.html" class="nav-item nav-sub"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>LTV Ranking</a>
+      <a href="analytics-bcg.html" class="nav-item nav-sub"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="9" height="9"/><rect x="13" y="2" width="9" height="9"/><rect x="2" y="13" width="9" height="9"/><rect x="13" y="13" width="9" height="9"/></svg>BCG Matrix</a>
+      <a href="contracts.html" class="nav-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>Contracts</a>
+      <a href="invoices.html" class="nav-item"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>Invoices</a>
+    </nav>
+    <div class="sidebar-footer"><div class="user-card"><div class="user-avatar">SC</div><div class="user-info"><div class="user-name">Sarah Chen</div><div class="user-role">Account Manager</div></div></div></div>
+  </aside>
+
+  <div class="main">
+    <header class="header">
+      <span class="header-title">RFM Analysis</span>
+      <div class="search-bar"><svg width="14" height="14" fill="none" stroke="#94A3B8" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input type="text" placeholder="Search…"></div>
+      <div class="header-actions"><button class="icon-btn"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/></svg><span class="badge-dot"></span></button></div>
+    </header>
+
+    <div class="content">
+      <div style="margin-bottom:20px">
+        <h1 style="font-size:22px;font-weight:700">RFM Analysis</h1>
+        <p style="color:var(--text-secondary);font-size:13px;margin-top:4px">Segment customers by Recency, Frequency, and Monetary value using NTILE(5) scoring. Last calculated: Mar 27, 2026 at 2:00 AM</p>
+      </div>
+
+      <!-- Segment Summary Cards -->
+      <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px">
+        <div class="segment-card" style="--seg-color:#6366F1">
+          <div class="seg-name">Champions</div>
+          <div class="seg-count">24</div>
+          <div class="seg-ltv">Avg LTV: $248K</div>
+          <div class="seg-trend" style="color:#10B981">↑ +2 this month</div>
+        </div>
+        <div class="segment-card" style="--seg-color:#8B5CF6">
+          <div class="seg-name">Loyal</div>
+          <div class="seg-count">31</div>
+          <div class="seg-ltv">Avg LTV: $142K</div>
+          <div class="seg-trend" style="color:#10B981">↑ +4 this month</div>
+        </div>
+        <div class="segment-card" style="--seg-color:#10B981">
+          <div class="seg-name">Potential Loyalist</div>
+          <div class="seg-count">18</div>
+          <div class="seg-ltv">Avg LTV: $68K</div>
+          <div class="seg-trend" style="color:var(--text-muted)">→ No change</div>
+        </div>
+        <div class="segment-card" style="--seg-color:#F59E0B">
+          <div class="seg-name">At Risk</div>
+          <div class="seg-count">17</div>
+          <div class="seg-ltv">Avg LTV: $94K</div>
+          <div class="seg-trend" style="color:#EF4444">↑ +3 this month</div>
+        </div>
+      </div>
+      <div class="grid" style="grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px">
+        <div class="segment-card" style="--seg-color:#EF4444">
+          <div class="seg-name">Lost</div>
+          <div class="seg-count">8</div>
+          <div class="seg-ltv">Avg LTV: $31K</div>
+          <div class="seg-trend" style="color:var(--text-muted)">→ Stable</div>
+        </div>
+        <div class="segment-card" style="--seg-color:#06B6D4">
+          <div class="seg-name">New Customers</div>
+          <div class="seg-count">9</div>
+          <div class="seg-ltv">Avg LTV: $14K</div>
+          <div class="seg-trend" style="color:#10B981">↑ +5 this month</div>
+        </div>
+        <div class="segment-card" style="--seg-color:#64748B">
+          <div class="seg-name">Hibernating</div>
+          <div class="seg-count">11</div>
+          <div class="seg-ltv">Avg LTV: $47K</div>
+          <div class="seg-trend" style="color:#EF4444">↓ -1 this month</div>
+        </div>
+        <div class="segment-card" style="--seg-color:#7C3AED">
+          <div class="seg-name">Can't Lose</div>
+          <div class="seg-count">6</div>
+          <div class="seg-ltv">Avg LTV: $189K</div>
+          <div class="seg-trend" style="color:#EF4444">↑ +1 (urgent!)</div>
+        </div>
+      </div>
+
+      <!-- Heatmap + Bottom Charts -->
+      <div class="grid grid-65-35" style="gap:20px">
+
+        <!-- RFM Heatmap -->
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px">
+            <div>
+              <div class="card-title" style="margin:0">R×F Score Heatmap</div>
+              <div style="font-size:12px;color:var(--text-muted);margin-top:2px">Number of companies at each Recency × Frequency intersection</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;font-size:11px;color:var(--text-muted)">
+              <span>Few</span>
+              <div style="display:flex;gap:2px">
+                <div style="width:16px;height:16px;background:#EEF2FF;border-radius:2px"></div>
+                <div style="width:16px;height:16px;background:#C7D2FE;border-radius:2px"></div>
+                <div style="width:16px;height:16px;background:#818CF8;border-radius:2px"></div>
+                <div style="width:16px;height:16px;background:#4F46E5;border-radius:2px"></div>
+                <div style="width:16px;height:16px;background:#312E81;border-radius:2px"></div>
+              </div>
+              <span>Many</span>
+            </div>
+          </div>
+
+          <div style="overflow-x:auto">
+            <table class="heatmap-table">
+              <thead>
+                <tr>
+                  <th style="text-align:left;padding-right:12px">R \ F</th>
+                  <th>F=1</th><th>F=2</th><th>F=3</th><th>F=4</th><th>F=5</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-size:11px;font-weight:600;color:var(--text-muted);padding-right:12px">R=5</td>
+                  <td class="heatmap-cell hm-1"><span class="hm-count">5</span><span class="hm-avg">$14K avg</span></td>
+                  <td class="heatmap-cell hm-1"><span class="hm-count">4</span><span class="hm-avg">$42K avg</span></td>
+                  <td class="heatmap-cell hm-2"><span class="hm-count">7</span><span class="hm-avg">$68K avg</span></td>
+                  <td class="heatmap-cell hm-3"><span class="hm-count">9</span><span class="hm-avg">$124K avg</span></td>
+                  <td class="heatmap-cell hm-4"><span class="hm-count">12</span><span class="hm-avg">$248K avg</span></td>
+                </tr>
+                <tr>
+                  <td style="font-size:11px;font-weight:600;color:var(--text-muted);padding-right:12px">R=4</td>
+                  <td class="heatmap-cell hm-1"><span class="hm-count">3</span><span class="hm-avg">$18K avg</span></td>
+                  <td class="heatmap-cell hm-1"><span class="hm-count">5</span><span class="hm-avg">$56K avg</span></td>
+                  <td class="heatmap-cell hm-2"><span class="hm-count">8</span><span class="hm-avg">$92K avg</span></td>
+                  <td class="heatmap-cell hm-3"><span class="hm-count">11</span><span class="hm-avg">$148K avg</span></td>
+                  <td class="heatmap-cell hm-2"><span class="hm-count">6</span><span class="hm-avg">$198K avg</span></td>
+                </tr>
+                <tr>
+                  <td style="font-size:11px;font-weight:600;color:var(--text-muted);padding-right:12px">R=3</td>
+                  <td class="heatmap-cell hm-0"><span class="hm-count">2</span><span class="hm-avg">$24K avg</span></td>
+                  <td class="heatmap-cell hm-1"><span class="hm-count">4</span><span class="hm-avg">$47K avg</span></td>
+                  <td class="heatmap-cell hm-2"><span class="hm-count">7</span><span class="hm-avg">$78K avg</span></td>
+                  <td class="heatmap-cell hm-2"><span class="hm-count">6</span><span class="hm-avg">$112K avg</span></td>
+                  <td class="heatmap-cell hm-1"><span class="hm-count">4</span><span class="hm-avg">$164K avg</span></td>
+                </tr>
+                <tr>
+                  <td style="font-size:11px;font-weight:600;color:var(--text-muted);padding-right:12px">R=2</td>
+                  <td class="heatmap-cell hm-0"><span class="hm-count">2</span><span class="hm-avg">$31K avg</span></td>
+                  <td class="heatmap-cell hm-0"><span class="hm-count">3</span><span class="hm-avg">$58K avg</span></td>
+                  <td class="heatmap-cell hm-1"><span class="hm-count">5</span><span class="hm-avg">$84K avg</span></td>
+                  <td class="heatmap-cell hm-1"><span class="hm-count">4</span><span class="hm-avg">$134K avg</span></td>
+                  <td class="heatmap-cell hm-2"><span class="hm-count">6</span><span class="hm-avg">$189K avg</span></td>
+                </tr>
+                <tr>
+                  <td style="font-size:11px;font-weight:600;color:var(--text-muted);padding-right:12px">R=1</td>
+                  <td class="heatmap-cell hm-0"><span class="hm-count">1</span><span class="hm-avg">$9K avg</span></td>
+                  <td class="heatmap-cell hm-0"><span class="hm-count">2</span><span class="hm-avg">$28K avg</span></td>
+                  <td class="heatmap-cell hm-1"><span class="hm-count">3</span><span class="hm-avg">$62K avg</span></td>
+                  <td class="heatmap-cell hm-1"><span class="hm-count">3</span><span class="hm-avg">$97K avg</span></td>
+                  <td class="heatmap-cell hm-1"><span class="hm-count">4</span><span class="hm-avg">$142K avg</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div style="display:flex;gap:12px;margin-top:8px;font-size:10px;color:var(--text-muted)">
+            <span>↑ R=5 most recent</span><span>→ F=5 most frequent</span>
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div>
+          <!-- Monetary Distribution -->
+          <div class="card mb-16">
+            <div class="card-title">Monetary Score Distribution</div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span>M=5 (Top 20%)</span><span style="font-weight:600">$180K+ avg</span></div>
+                <div class="progress-bar"><div class="progress-fill pf-primary" style="width:22%"></div></div>
+                <div style="font-size:11px;color:var(--text-muted);margin-top:2px">24 companies</div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span>M=4</span><span style="font-weight:600">$95–180K avg</span></div>
+                <div class="progress-bar"><div class="progress-fill pf-primary" style="width:30%"></div></div>
+                <div style="font-size:11px;color:var(--text-muted);margin-top:2px">32 companies</div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span>M=3</span><span style="font-weight:600">$45–95K avg</span></div>
+                <div class="progress-bar"><div class="progress-fill pf-primary" style="width:25%"></div></div>
+                <div style="font-size:11px;color:var(--text-muted);margin-top:2px">27 companies</div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span>M=2</span><span style="font-weight:600">$15–45K avg</span></div>
+                <div class="progress-bar"><div class="progress-fill" style="width:15%;background:#C7D2FE"></div></div>
+                <div style="font-size:11px;color:var(--text-muted);margin-top:2px">16 companies</div>
+              </div>
+              <div>
+                <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px"><span>M=1 (Bottom 20%)</span><span style="font-weight:600">< $15K avg</span></div>
+                <div class="progress-bar"><div class="progress-fill" style="width:8%;background:#E0E7FF"></div></div>
+                <div style="font-size:11px;color:var(--text-muted);margin-top:2px">8 companies</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Segment Movements -->
+          <div class="card">
+            <div class="card-title">Segment Movements (This Quarter)</div>
+            <table style="width:100%;font-size:12px">
+              <thead><tr><th style="text-align:left;padding:4px 0;color:var(--text-muted);font-weight:600">From</th><th style="text-align:left;padding:4px 0;color:var(--text-muted);font-weight:600">To</th><th style="text-align:center;padding:4px 0;color:var(--text-muted);font-weight:600">Count</th></tr></thead>
+              <tbody>
+                <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 0">Potential Loyalist</td><td><span class="badge badge-loyal" style="font-size:11px">Loyal</span></td><td style="text-align:center"><span style="color:#10B981;font-weight:600">↑ 7</span></td></tr>
+                <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 0">At Risk</td><td><span class="badge badge-hibernating" style="font-size:11px">Hibernating</span></td><td style="text-align:center"><span style="color:#EF4444;font-weight:600">↓ 4</span></td></tr>
+                <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 0">Loyal</td><td><span class="badge badge-champion" style="font-size:11px">Champion</span></td><td style="text-align:center"><span style="color:#10B981;font-weight:600">↑ 3</span></td></tr>
+                <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 0">Champion</td><td><span class="badge badge-at-risk" style="font-size:11px">At Risk</span></td><td style="text-align:center"><span style="color:#EF4444;font-weight:600">↓ 2</span></td></tr>
+                <tr><td style="padding:6px 0">New Customer</td><td><span class="badge badge-potential" style="font-size:11px">Potential Loyalist</span></td><td style="text-align:center"><span style="color:#10B981;font-weight:600">↑ 5</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
