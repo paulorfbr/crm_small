@@ -268,3 +268,57 @@ All values are set in `src/main/resources/application.properties`.
 | GET | `/api/analytics/bcg/quadrant/{quadrant}` | Companies in quadrant |
 | GET | `/api/analytics/bcg/summary` | Count per quadrant |
 | POST | `/api/analytics/recalculate` | Manually trigger full analytics pipeline |
+
+---
+
+## 8. Roadmap
+
+### Phase 1 — Foundation (Current)
+Core data model, REST API, and nightly analytics pipeline are in place.
+
+- Company, Contact, Contract, Invoice, and Interaction management
+- RFM scoring with 8 behavioural segments (NTILE-based, portfolio-relative)
+- LTV calculation with churn-risk discounting
+- BCG Matrix with portfolio-median thresholds
+- Nightly scheduler (RFM → LTV → BCG) with renewal and overdue alerts
+- Static HTML dashboard and analytics UI
+
+---
+
+### Phase 2 — Operational Improvements
+Reduce manual work and surface alerts earlier.
+
+| Feature | Description |
+|---|---|
+| Email notifications | Send renewal and overdue alerts via email instead of log-only warnings |
+| Contract auto-period generation | Auto-create contract periods on a monthly/quarterly cadence |
+| Bulk invoice import | CSV upload for historical invoice data |
+| Overdue invoice escalation | Configurable escalation tiers (30 / 60 / 90 days) |
+| Interaction reminders | Schedule follow-up reminders tied to interactions |
+
+---
+
+### Phase 3 — Analytics Depth
+Expand analytical coverage and make insights more actionable.
+
+| Feature | Description |
+|---|---|
+| Churn probability model | Replace rule-based churn risk with a regression model trained on historical churn events |
+| Cohort analysis | Group companies by acquisition quarter and track revenue and retention over time |
+| Revenue forecasting | Project next-quarter portfolio revenue from active contracts and historical payment patterns |
+| Segment trend view | Track how a company's RFM segment evolves month-over-month |
+| LTV ranking dashboard widget | Live top-N LTV table with delta vs. previous calculation |
+
+---
+
+### Phase 4 — Platform & Integrations
+Open the platform to external systems and multi-user workflows.
+
+| Feature | Description |
+|---|---|
+| User authentication | Role-based access (Account Manager, Sales Manager, Admin) with Spring Security |
+| Audit log | Record who created or changed each record and when |
+| REST webhooks | Emit events (company churned, segment changed, invoice overdue) to external systems |
+| Accounting integration | Sync invoices with QuickBooks or Xero via API |
+| Calendar integration | Push interaction reminders and renewal dates to Google Calendar / Outlook |
+| Multi-tenant support | Isolate data per organisation for SaaS deployment |
