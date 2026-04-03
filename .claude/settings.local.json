@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "mcp__cachebro__read_files"
+      "mcp__cachebro__read_files",
+      "mcp__cachebro__read_file"
     ]
   }
 }
