@@ -30,7 +30,6 @@
 - Companies can be filtered by status via the API.
 
 ### 3.2 Contact Management
-
 - Each company can have multiple contacts (first name, last name, email, phone, role).
 - One contact per company can be flagged as primary.
 - Contacts are deleted when their parent company is deleted (cascade).

@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "mcp__cachebro__read_files",
-      "mcp__cachebro__read_file"
+      "mcp__cachebro__read_file",
+      "Bash(powershell.exe -File \".specify/scripts/powershell/setup-plan.ps1\" -Json)"
     ]
   }
 }
