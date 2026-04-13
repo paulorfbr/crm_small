@@ -61,6 +61,12 @@
             <version>11.3.4</version>
         </dependency>
 
+        <!-- Actuator — exposes /actuator/health for ALB health checks -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
         <!-- Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

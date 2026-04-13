@@ -11,6 +11,14 @@ target/
 .env.*
 *.log
 
+### Terraform ###
+infra/.terraform/
+infra/.terraform.lock.hcl
+infra/terraform.tfstate
+infra/terraform.tfstate.backup
+infra/terraform.tfvars
+infra/*.tfvars.json
+
 ### Eclipse ###
 *.class
 .apt_generated

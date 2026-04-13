@@ -1,0 +1,23 @@
+# Build output
+target/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Spec and docs (not needed in image)
+specs/
+marketing/
+*.md
+
+# Environment files — never bake credentials into the image
+.env
+.env.*
+
+# macOS
+.DS_Store
