@@ -4,7 +4,10 @@ import com.crm.api.shared.ApiResponse;
 import com.crm.domain.company.Company;
 import com.crm.domain.company.CompanyStatus;
 import com.crm.domain.company.CompanyTier;
+import com.crm.domain.interaction.Interaction;
+import com.crm.domain.interaction.InteractionType;
 import com.crm.service.company.CompanyService;
+import com.crm.service.interaction.InteractionService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -21,9 +24,12 @@ import java.util.UUID;
 public class CompanyController {
 
     private final CompanyService companyService;
+    private final InteractionService interactionService;
 
-    public CompanyController(CompanyService companyService) {
+    public CompanyController(CompanyService companyService,
+                             InteractionService interactionService) {
         this.companyService = companyService;
+        this.interactionService = interactionService;
     }
 
     record CreateRequest(
@@ -89,5 +95,49 @@ public class CompanyController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable UUID id) {
         companyService.delete(id);
+    }
+
+    // --- Interaction endpoints ---
+
+    record LogInteractionRequest(
+            @NotNull InteractionType interactionType,
+            @NotNull LocalDateTime interactedAt,
+            String notes,
+            String outcome,
+            @NotBlank String createdBy,
+            UUID contactId
+    ) {}
+
+    record InteractionDto(UUID id, UUID companyId, UUID contactId,
+                          InteractionType interactionType, LocalDateTime interactedAt,
+                          String notes, String outcome, String createdBy,
+                          LocalDateTime createdAt) {
+        static InteractionDto from(Interaction i) {
+            return new InteractionDto(
+                    i.getId(), i.getCompany().getId(),
+                    i.getContact() != null ? i.getContact().getId() : null,
+                    i.getType(), i.getOccurredAt(),
+                    i.getNotes(), i.getOutcome(), i.getCreatedByUser(),
+                    i.getCreatedAt());
+        }
+    }
+
+    @PostMapping("/{id}/interactions")
+    @ResponseStatus(HttpStatus.CREATED)
+    public ApiResponse<InteractionDto> logInteraction(
+            @PathVariable UUID id,
+            @Valid @RequestBody LogInteractionRequest req) {
+        Interaction interaction = interactionService.log(
+                id, req.contactId(), req.interactionType(),
+                req.interactedAt(), req.notes(), req.outcome(), req.createdBy());
+        return ApiResponse.ok(InteractionDto.from(interaction));
+    }
+
+    @GetMapping("/{id}/interactions")
+    public ApiResponse<List<InteractionDto>> listInteractions(
+            @PathVariable UUID id,
+            @RequestParam(defaultValue = "50") int limit) {
+        return ApiResponse.ok(interactionService.getRecentByCompany(id, limit)
+                .stream().map(InteractionDto::from).toList());
     }
 }

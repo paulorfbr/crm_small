@@ -51,6 +51,9 @@ public class ContractPeriod {
     }
 
     public void markPaid() {
+        if (this.status == ContractPeriodStatus.PAID) {
+            throw new IllegalStateException("Contract period is already paid: " + id);
+        }
         this.status = ContractPeriodStatus.PAID;
         this.paidAt = LocalDateTime.now();
     }

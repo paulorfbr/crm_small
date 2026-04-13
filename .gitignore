@@ -3,6 +3,13 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 target/
+*.class
+*.jar
+
+### Environment ###
+.env
+.env.*
+*.log
 
 ### Eclipse ###
 *.class

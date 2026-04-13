@@ -69,6 +69,9 @@ public class Invoice {
     }
 
     public void markPaid(LocalDate paidDate) {
+        if (this.status == InvoiceStatus.PAID || this.status == InvoiceStatus.CANCELLED) {
+            throw new IllegalStateException("Invoice cannot be paid in status: " + this.status);
+        }
         this.paidDate = paidDate;
         this.status = InvoiceStatus.PAID;
     }

@@ -3,7 +3,13 @@
     "allow": [
       "mcp__cachebro__read_files",
       "mcp__cachebro__read_file",
-      "Bash(powershell.exe -File \".specify/scripts/powershell/setup-plan.ps1\" -Json)"
+      "Bash(powershell.exe -File \".specify/scripts/powershell/setup-plan.ps1\" -Json)",
+      "Bash(powershell.exe -File \".specify/scripts/powershell/check-prerequisites.ps1\" -Json)",
+      "Bash(powershell.exe -File \".specify/scripts/powershell/check-prerequisites.ps1\" -Json -RequireTasks -IncludeTasks)",
+      "Bash(./mvnw compile:*)",
+      "Bash(mvn compile:*)",
+      "Bash(java -version)",
+      "Bash(mvn -version)"
     ]
   }
 }
